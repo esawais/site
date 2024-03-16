@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      circle { animation: ani-radial-loop 600ms linear infinite; }
+      circle:nth-child(17) { r:2.823529%; --from:2.823529%; --to:0%; }
+      circle:nth-child(16) { r:5.647059%; --from:5.647059%; --to:2.82353%; }
+      circle:nth-child(15) { r:8.470588%; --from:8.470588%; --to:5.647059%; }
+      circle:nth-child(14) { r:11.294118%; --from:11.294118%; --to:8.470589%; }
+      circle:nth-child(13) { r:14.117647%; --from:14.117647%; --to:11.294118%; }
+      circle:nth-child(12) { r:16.941176%; --from:16.941176%; --to:14.117647%; }
+      circle:nth-child(11) { r:19.764706%; --from:19.764706%; --to:16.941177%; }
+      circle:nth-child(10) { r:22.588235%; --from:22.588235%; --to:19.764706%; }
+      circle:nth-child(9) { r:25.411765%; --from:25.411765%; --to:22.588236%; }
+      circle:nth-child(8) { r:28.235294%; --from:28.235294%; --to:25.411765%; }
+      circle:nth-child(7) { r:31.058824%; --from:31.058824%; --to:28.235295%; }
+      circle:nth-child(6) { r:33.882353%; --from:33.882353%; --to:31.058824%; }
+      circle:nth-child(5) { r:36.705882%; --from:36.705882%; --to:33.882353%; }
+      circle:nth-child(4) { r:39.529412%; --from:39.529412%; --to:36.705883%; }
+      circle:nth-child(3) { r:42.352941%; --from:42.352941%; --to:39.529412%; }
+      circle:nth-child(2) { r:45.176471%; --from:45.176471%; --to:42.352942%; }
+      circle:nth-child(1) { r:48%; --from:48%; --to:45.176471%; }
+      @keyframes ani-radial-loop {
+        from {r: var(--from);}
+        to {r: var(--to);}
+      }
+    </style>
+    <radialGradient id="fadeGrad" r="50%" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="white" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <mask id="fadeGradMask">
+    <circle cx="50%" cy="50%" r="50%" fill="url(#fadeGrad)"/>
+  </mask>
+  <g mask="url(#fadeGradMask)" fill="none" stroke="#463FBD" stroke-width="0.1" stroke-miterlimit="10">
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <circle cx="50" cy="50" />
+    <!-- <circle cx="50" cy="50" r="48"/>
+    <circle cx="50" cy="50" r="45.176471"/>
+    <circle cx="50" cy="50" r="42.352941"/>
+    <circle cx="50" cy="50" r="39.529412"/>
+    <circle cx="50" cy="50" r="36.705882"/>
+    <circle cx="50" cy="50" r="33.882353"/>
+    <circle cx="50" cy="50" r="31.058824"/>
+    <circle cx="50" cy="50" r="28.235294"/>
+    <circle cx="50" cy="50" r="25.411765"/>
+    <circle cx="50" cy="50" r="22.588235"/>
+    <circle cx="50" cy="50" r="19.764706"/>
+    <circle cx="50" cy="50" r="16.941176"/>
+    <circle cx="50" cy="50" r="14.117647"/>
+    <circle cx="50" cy="50" r="11.294118"/>
+    <circle cx="50" cy="50" r="8.470588"/>
+    <circle cx="50" cy="50" r="5.647059"/>
+    <circle cx="50" cy="50" r="2.823529"/> -->
+  </g>
+</svg>
