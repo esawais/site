@@ -1,3 +1,0 @@
-@each $name, $type, $weight in $font-list {
-	@include font-face($name, $type, $weight);
-}
