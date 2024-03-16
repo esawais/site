@@ -1,0 +1,146 @@
+@use 'sass:math';
+
+// Unit conversion : px → rem
+@function rem($size) {
+  $return-value: calc($size / 10);
+	@return #{$return-value}rem;
+}
+
+// Unit conversion [PC] : px → vw
+@function pc-vw($size:0, $size_min:0) {
+  $return-value: calc($size / $design-master-vw * 100);
+  $return-value2: calc($size / 10);
+  $return-value3: calc($return-value2 * 0.5);
+	@if $size_min != 0 {
+    $return-value3: calc($size_min / 10);
+  }
+	@return clamp(#{$return-value3}rem, #{$return-value}vw, #{$return-value2}rem);
+}
+// Unit conversion [PC] : px → vh
+@function pc-vh($size:0, $size_min:0) {
+  $return-value: calc($size / $design-master-vh * 100);
+  $return-value2: calc($size / 10);
+  $return-value3: calc($return-value2 * 0.5);
+	@if $size_min != 0 {
+    $return-value3: calc($size_min / 10);
+  }
+	@return clamp(#{$return-value3}rem, #{$return-value}vh, #{$return-value2}rem);
+}
+
+// Viewport media query
+@mixin mobile {
+  @media (max-width: $viewport-mobile) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $viewport-tab) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: $viewport-tab) and (max-width: $viewport-laptop) {
+    @content;
+  }
+}
+
+// font-face mixin
+@mixin font-face($name, $type, $weight) {
+  @font-face {
+    font-family: $name;
+    src: local('#{$name} #{type}'),
+      url('#{$url-font}#{$name}-#{$type}.woff2') format('woff2'),
+      url('#{$url-font}#{$name}-#{$type}.woff') format('woff');
+    font-display: swap;
+    font-weight: $weight;
+  }
+}
+
+// text overflow mixin
+@mixin ellipsis($line:1) {
+  @if ($line == 1) {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    -webkit-line-clamp: $line;
+  }
+	overflow: hidden;
+	text-overflow: ellipsis;
+  // @include ellipsis, @include ellipsis(2)
+}
+
+// hide (Accessibility hide)
+@mixin hide {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// font-face mixin
+@mixin transition-fade-up-init($size:30, $delay:0ms) {
+  transform: translateY(rem($size));
+  opacity: 0;
+  transition: all $ani-time $delay $ease-default;
+}
+@mixin transition-fade-up($size:0) {
+  transform: translateY(rem($size));
+  opacity: 1;
+}
+
+
+////
+/// Helper function to easily use an SVG inline in CSS
+/// without encoding it to base64, saving bytes.
+/// It also helps with browser support.
+////
+
+/// A small function allowing skipping base64 encoding
+/// and simply pasting the SVG markup right in the CSS.
+/// @author Jakob Eriksen
+/// @link http://codepen.io/jakob-e/pen/doMoML
+/// @param {String} $svg - SVG image to encode
+/// @return {String} - Encoded SVG data uri
+@function svg-uri($svg) {
+  $encoded: '';
+  $slice: 2000;
+  $index: 0;
+  $loops: ceil(math.div(str-length($svg), $slice));
+
+  @for $i from 1 through $loops {
+      $chunk: str-slice($svg, $index, $index + $slice - 1);
+      $chunk: str-replace($chunk, '"', "'");
+      $chunk: str-replace($chunk, '<', '%3C');
+      $chunk: str-replace($chunk, '>', '%3E');
+      $chunk: str-replace($chunk, '&', '%26');
+      $chunk: str-replace($chunk, '#', '%23');
+      $encoded: #{$encoded}#{$chunk};
+      $index: $index + $slice;
+  }
+
+  @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @link http://sassmeister.com/gist/1b4f2da5527830088e4d
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+      @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

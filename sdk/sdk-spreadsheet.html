@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WHBMFPFD');</script>
+	<!-- End Google Tag Manager -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="Intelligent automation created by Hancom AI">
+	<meta property="og:url" content="https://ai.hancom.com/">
+	<meta property="og:title" content="Hancom">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hancom">
+	<meta property="og:image" content="https://ai.hancom.com/static/img/common/og.png">
+	<meta property="og:description" content="Intelligent automation created by Hancom AI">
+	<link rel="shortcut icon" type="image/x-icon" href="../static/img/common/favicon.ico">
+	<title>Spreadsheet SDK - Hancom</title>
+
+	<link rel="stylesheet" href="../static/css/ui.hancom.css" />
+
+
+	<script src="../static/js/libs/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="../static/js/libs/swiper-bundle.min.css" />
+	<script src="../static/js/libs/gsap.min.js"></script>
+	<script src="../static/js/libs/ScrollTrigger.min.js"></script>
+	<script src="../static/js/libs/lenis.min.js"></script>
+	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="95d8a143-8179-4d16-a65f-fa84733afaca" type="text/javascript" async></script>
+
+
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHBMFPFD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="wrap">
+		<div class="skip"><a href="#container">Skip to content</a></div>
+<header class="header">
+    <h1 class="logo"><a href="../" alt="Hancom logo">HANCOM</a></h1>
+    
+    <div class="page-back">
+        <button type="button">back</button>
+    </div>
+    <nav class="lang" data-dropdown="{'case':'lang'}">
+        <button type="button" class="dropdown-handle">EN</button>
+        <div class="dropdown-target">
+            <a href="../index.html" lang="en" ab="EN">English</a>
+            <a href="../de/index.html" lang="de" ab="DE">Deutsch</a>
+            <a href="../es/index.html" lang="es" ab="ES">Español</a>
+            <a href="../jp/index.html" lang="ja" ab="JA">日本語</a>
+        </div>
+    </nav>
+    
+    <nav class="menu" data-lenis-prevent-wheel data-dropdown="{'case':'menu'}">
+        <button type="button" class="dropdown-handle">menu</button>
+        <ul class="dropdown-target">
+            <li>
+                <a href="../ai/ai.html">AI</a>
+                <button type="button" class="sub-toggle">menu open</button>
+                <ul>
+                    <li><a href="../ai/ai.html">Overview</a></li>
+                    <li><a href="../ai/ai.html?sec=assistant">Assistant</a></li>
+                    <li><a href="../ai/ai.html?sec=qa">Document QA</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../sdk/sdk.html">SDK</a>
+                <button type="button" class="sub-toggle">menu open</button>
+                <ul>
+                    <li><a href="../sdk/sdk.html">Overview</a></li>
+                    <li><a href="../sdk/sdk-spreadsheet.html">Spreadsheet SDK</a></li>
+                    <li><a href="../sdk/sdk-office.html">Office SDK</a></li>
+                    <li><a href="../sdk/sdk-pdf.html">PDF SDK</a></li>
+                    <li><a href="../sdk/sdk-ai.html">AI SDK</a>
+                        <ul>
+                            <li><a href="../sdk/sdk-ai.html?sec=ocr">OCR SDK</a></li>
+                            <li><a href="../sdk/sdk-ai.html?sec=chatbot">Chatbot SDK</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="../office/office.html">Office</a>
+                <button type="button" class="sub-toggle">menu open</button>
+                <ul>
+                    <li><a href="../office/office.html?sec=overview">Overview</a></li>
+                    <li><a href="../office/office.html?sec=word">Word</a></li>
+                    <li><a href="../office/office.html?sec=cell">Cell</a></li>
+                    <li><a href="../office/office.html?sec=show">Show</a></li>
+                    <li><a href="../office/office.html?sec=pdf">PDF</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="contact-us" data-dropdown="{'case':'contactus'}">
+        <button type="button" class="dropdown-handle">Contact US</button>
+        <div class="dropdown-target" data-lenis-prevent-wheel>
+            <button type="button" class="dropdown-close">close</button>
+            <div class="col">
+                <h2 class="subj">Contact us</h2>
+                <div class="text-ty"><a href="mailto:hancom.global@hancom.com">hancom.global@hancom.com</a></div>
+                <div class="address">
+                    <span class="iblock">49,</span>
+                    <span class="iblock">Daewangpangyo-ro 644beon-gil,</span><br>
+                    <span class="iblock">Bundang-gu, Seongnam-si,</span>
+                    <span class="iblock">Gyeonggi-do,</span>
+                    <span class="iblock">Republic of Korea</span>
+                </div>
+                <dl class="message">
+                    <dt>Let’s get in touch now</dt>
+                    <dd>We’d love to hear from you and begin our collaboration.</dd>
+                </dl>
+            </div>
+            <form class="col" data-validcheck="{'type':'required', 'send':'.btn-send'}">
+                <legend class="blind">send message form</legend>
+                <label class="fm-row">
+                    <input id="name" type="text" maxlength="20" placeholder="Your name" data-pattern="name" required />
+                    <span class="blind">name</span>
+                </label>
+                <label class="fm-row">
+                    <input id="email" type="email" placeholder="Your Email" data-pattern="email" required />
+                    <span class="blind">Email</span>
+                </label>
+                <label class="fm-row">
+                    <input id="companyName" type="text" maxlength="20" placeholder="Company name" required />
+                    <span class="blind">company</span>
+                </label>
+                <label class="fm-row">
+                    <select id="interest" placeholder="Interest" required>
+                        <option value="placeholder" hidden>Your Interest (optional)</option>
+                        <option value="AI">AI</option>
+                        <option value="SDK">SDK</option>
+                        <option value="Office">Office</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <span class="blind">interest</span>
+                </label>
+                <label class="fm-row">
+                    <select id="country" placeholder="Country" required>
+                        <option value="placeholder" hidden>Country</option>
+                        <option value="">Germany</option>
+                        <option value="">France</option>
+                    </select>
+                    <span class="blind">country</span>
+                </label>
+                <label class="fm-row">
+                    <textarea style="resize:none;" id="message" placeholder="Please type your message here" required maxlength="1000" ></textarea>
+                    <span class="blind">message</span>
+                </label>
+                <label class="fm-row mg-ty">
+                    <input id="checkbox" type="checkbox" required />
+                    <span class="label"><span class="in">I accept Hancom's Terms and Conditions and acknowledge that my information will be used in accordance with Hancom’s <a href="../etc/privacy.html" target="_blank">Privacy Policy.</a></span></span>
+                </label>
+                <span class="fm-foot">
+						<button type="button" id="send_inquiry" class="btn-send" disabled onclick="HANCOMUI.prepareSendMail()">Send message</button>
+					</span>
+            </form>
+        </div>
+    </div>
+    <div class="scroll-pos"><!-- 스크롤 위치 표시 --></div>
+    
+</header>
+
+		<div id="container" class="container" data-page="spreadsheet">
+			<div class="g-head" data-scrolltoggle="default">
+				<h2 class="g-title" data-ani="splitText">SDK</h2>
+				<div class="g-title-sub" data-ani="fadeUp">
+					<span class="iblock">Introducing Hancom SDKs,</span>
+					<span class="iblock">a modularized solution</span>
+					<span class="iblock">that empowers you</span><br class="pc-only">
+					<span class="iblock">to enhance your products</span>
+					<span class="iblock">with our robust technology and expertise</span>
+				</div>
+			</div>
+			<div class="g-cont-box">
+				<h3 id="section-spreadsheet" class="g-title-2">
+					Spreadsheet SDK
+				</h3>
+				<p class="g-text">
+					This SDK enables you to embed functions, formulas,
+					data analysis, and more into your products and services.
+				</p>
+				<p class="g-text">
+					Over 420 spreadsheet modules are provided
+					in a platform-independent form.
+				</p>
+
+				<div class="sdk-spreadsheet-visual-1 ty-center-icon" data-scrolltoggle="default">
+					<span class="img"><img src="../static/img/sub/sdk-overview-visual-icon-5.png" alt="SDK banner" /></span>
+				</div>
+				<article class="sdk-ar sdk-spreadsheet-1" data-scrolltoggle="default">
+					<h4 class="blind">Spreadsheet SDK Overview</h4>
+					<div class="img-wrap">
+						<span class="img">
+							<img src="../static/img/sub/sdk-spreadsheet-icon-mac.svg" alt="Spreadsheet SDK summary" />
+							<ul class="box-list">
+								<li>
+									<span class="iblock">
+										Utilize cell formats
+										within the program
+									</span>
+								</li>
+								<li>
+									<span class="iblock">
+										Analyze data using
+										tools, such as a chart
+									</span>
+								</li>
+								<li>
+									<span class="iblock">
+										Embed functions
+										and formulas
+									</span>
+								</li>
+								<li>
+									<span class="iblock">
+										Edit data using tools,
+										such as a pivot table
+									</span>
+								</li>
+							</ul>
+						</span>
+					</div>
+				</article>
+
+				<article class="sdk-ar sdk-spreadsheet-2">
+					<h4 class="g-title-2">
+						<span class="iblock">Use the Spreadsheet SDK,</span>
+						<span class="iblock">which has demonstrated reliability</span>
+						<span class="iblock">through years of service,</span>
+						<span class="iblock">wherever data needs to be handled</span>
+					</h4>
+					<ul class="ty-only-text-box scroll" data-scrolltoggle="default">
+						<li data-ani="fadeUp">
+							<p class="title">Rich features</p>
+							<p class="sub-disc">
+								Supports a range of spreadsheet
+								features, including pivot tables
+								and filters.
+							</p>
+						</li>
+						<li data-ani="fadeUp">
+							<p class="title">Lightweight module</p>
+							<p class="sub-disc">
+								A lightweight module enables easy
+								integration with other solutions.
+							</p>
+						</li>
+						<li data-ani="fadeUp">
+							<p class="title">Reliable performance</p>
+							<p class="sub-disc">
+								Leverage the calculation engine module
+								of Hancom Office Cell, which has a
+								successful release history and reliable
+								stability.
+							</p>
+						</li>
+						<li data-ani="fadeUp">
+							<p class="title">Exceptional compatibility</p>
+							<p class="sub-disc">
+								Seamlessly compatible with
+								MS Excel formats.
+							</p>
+						</li>
+						<li data-ani="fadeUp">
+							<p class="title">Numerous functions</p>
+							<p class="sub-disc">
+								Discover more than 420 functions
+								available as add-ins, giving you flexibility
+								to add and use them.
+							</p>
+						</li>
+					</ul>
+				</article>
+				<article class="sdk-ar sdk-spreadsheet-3">
+					<h4 class="g-title-2">
+						<span class="iblock">Easily develop software</span>
+						<span class="iblock">to handle data using</span>
+						<span class="iblock">Hancom's spreadsheet engine.</span>
+					</h4>
+					<ul class="ty-big-circle-icon arrow">
+						<li>
+							<div class="img"><img src="../static/img/sub/sdk-common-icon-purchase.svg" alt="Spreadsheet SDK pratices1" /></div>
+							<p class="sub-disc">
+								<span class="iblock">Purchase</span>
+								<span class="iblock">Hancom Spreadsheet SDK</span>
+							</p>
+						</li>
+						<li>
+							<div class="img"><img src="../static/img/sub/sdk-common-icon-develop.svg" alt="Spreadsheet SDK pratices2" /></div>
+							<p class="sub-disc">
+								<span class="iblock">Integrate the SDK into your</span>
+								<span class="iblock">existing product or develop</span>
+								<span class="iblock">new ones</span>
+							</p>
+						</li>
+						<li>
+							<div class="img"><img src="../static/img/sub/sdk-common-icon-func.svg" alt="functions" /></div>
+							<p class="sub-disc">
+								<span class="iblock">Release your product</span>
+								<span class="iblock">with spreadsheet features</span>
+								<span class="iblock">such as functions, data</span>
+								<span class="iblock">analysis, and visualization</span>
+							</p>
+						</li>
+					</ul>
+				</article>
+				<article class="sdk-ar sdk-spreadsheet-4">
+					<h4 class="g-title-2">
+						Best practices
+					</h4>
+					<ul class="ty-img-topline">
+						<li>
+							<span class="img"><img src="../static/img/sub/sdk-spreadsheet-practices-1.png" alt="Best practices" /></span>
+							<p class="sub-disc">
+								<span class="iblock">Use cell formats and functions</span>
+								<span class="iblock">in Word documents</span>
+							</p>
+						</li>
+						<li>
+							<span class="img"><img src="../static/img/sub/sdk-spreadsheet-practices-2.png" alt="Best practices" /></span>
+							<p class="sub-disc">
+								<span class="iblock">Create a Gantt chart to manage</span>
+								<span class="iblock">schedules and work timelines</span>
+							</p>
+						</li>
+					</ul>
+				</article>
+			</div>
+		</div>
+
+		
+	<div class="page-bg-mov" style="background-image:url(../static/mov/bg-poster.jpg)"><video autoplay muted loop playsinline poster="../static/mov/bg-poster.jpg"><source type="video/mp4" src="../static/mov/bg.mp4" /></video></div>
+
+	<footer class="footer" data-scrolltoggle="{'start':'100%', 'related':'.header .contact-us', 'relatedclass':'hidden'}">
+		<button type="button" class="page-top">Top</button>
+		<div class="inner">
+			<div class="menu">
+				<a href="../etc/privacy.html" target="_blank">Privacy</a>
+			</div>
+			<address>&copy; 2024 HANCOM All rights reserved.</address>
+		</div>
+	</footer>
+
+<script src="../static/js/countries.js"></script>
+<script src="../static/js/ui.hancom.min.js"></script>
+	</div>
+</body>
+</html>

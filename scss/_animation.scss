@@ -1,0 +1,85 @@
+[data-ani="splitText"] {
+	> span {display: inline-block; clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 120%);}
+	.in {display: inline-block; transform: translate3d(0, 100%, 0); opacity: 0; transition: all $ani-text-time calc(var(--delay) * 0.2s) $ease-out-sine;}
+	&.ani, .ani & {
+		.in {transform: translate3d(0, 0, 0); opacity: 1; }
+	}
+}
+
+[data-ani="fadeUp"] {
+	transform: translate3d(0, rem(30), 0); opacity: 0;
+	&.ani, .ani & {animation: ani-fade-in-up $ani-text-time calc((var(--delay) + var(--delay-add, 0)) * 0.2s) $ease-out-expo both;}
+}
+[data-ani="fadeIn"] {
+	opacity: 0;
+	&.ani, .ani & {animation: ani-fade-in $ani-time calc((var(--delay) + var(--delay-add, 0)) * 0.2s) $ease-out-expo both;}
+}
+[data-ani="spread"] {
+	line-height: rem(50);
+	height: rem(50);
+
+	.item {
+		display: inline-block;
+		height: 100%; opacity: 0;
+		aspect-ratio: 1/1;
+		vertical-align: middle;
+	}
+	&.ani > .item, .ani & > .item {
+		--ani-time: calc(var(--delay) * 0.2s);
+		animation: ani-zoom-in $ani-time var(--ani-time) $ease-out-sine both;
+		@for $i from 1 through 10 {
+			&:nth-child(#{ $i }) {animation-delay: calc($i * 0.2s + var(--ani-time));}
+		}
+	}
+}
+
+[data-dropdown] {
+	--on : 0;
+	&.active {
+		--on : 1;
+	}
+}
+// $ease-in-quad
+// $ease-in-cubic
+// $ease-in-quart
+// $ease-in-quint
+// $ease-in-sine
+// $ease-in-expo
+// $ease-in-circ
+// $ease-in-back
+// animation: ani-fade-up 5000ms infinite alternate;
+// animation: ani-fade-up 600ms 600ms both;
+
+@keyframes ani-fade-in {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+@keyframes ani-fade-out {
+	from {}
+	to {opacity: 0;}
+}
+@keyframes ani-fade-in-up {
+	from {transform: translate3d(0, rem(30), 0); opacity: 0;}
+	to {transform: translate3d(0, 0, 0); opacity: 1;}
+}
+@keyframes ani-zoom-in {
+	from {height: 0; opacity: 0;}
+	to {height: 100%; opacity: 1;}
+}
+@keyframes ani-hover-arrow {
+	0%, 100% {background-position: 50% 50%;}
+	33% {background-position: 70% 50%;}
+	80% {background-position: 40% 50%;}
+}
+@keyframes ani-bounce-in {
+	0% {
+	  opacity: 0;
+	  transform: scale(.3);
+	}
+	50% {
+	  opacity: 1;
+	  transform: scale(1.05);
+	}
+	70% { transform: scale(.9); }
+	100% { transform: scale(1); }
+}
